@@ -174,12 +174,14 @@ console.log(first,ELEMENt[0], ELEMENt);
 
 // Move last element to first.
 let array3 = [12,13,14,15,16];
-let f_index= array3[array3.length-1];
-for(let i=0; i<array3.length-1; i++){
-    array3[i+1] = array3[i];
+let f_index= array3[array3.length-1];// length-1 give me the last digit 
+for(let i=array3.length-1; i>=0; i--){
+    array3[i+1] = array3[i];// they are used  for updation the index if i =0 then i+1 = 0+1 = 1 the 12 is update move to 1 , i= 0 index= 12,  
 }
 array3[0] =f_index ;
 console.log(array3);
+console.log(array3.length);// the length give me overall length of array...
+
 
 
 
