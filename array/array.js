@@ -175,7 +175,7 @@ console.log(first,ELEMENt[0], ELEMENt);
 // Move last element to first.
 let array3 = [12,13,14,15,16];
 let f_index= array3[array3.length-1];// length-1 give me the last digit 
-for(let i=array3.length-1; i>=0; i--){
+for(let i=array3.length-2; i>=0; i--){
     array3[i+1] = array3[i];// they are used  for updation the index if i =0 then i+1 = 0+1 = 1 the 12 is update move to 1 , i= 0 index= 12,  
 }
 array3[0] =f_index ;
@@ -186,6 +186,21 @@ console.log(array3.length);// the length give me overall length of array...
 
 
 // Remove duplicate values.
+//in this algorithm or problem we used the empty array for store the new array and we used the for loop the condition and method of array like push and includes etc and we want to log the duplicates array this the remove duplicates problem..
+let duplicates_array = [12,12,43,43,54,54,66,120,54,320,43,12];
+let copy_array = [];
+for(let i=0; i<duplicates_array.length; i++){
+    if(!copy_array.includes(duplicates_array[i])){
+        copy_array.push(duplicates_array[i]);
+        
+}
+else{
+    console.log(`${duplicates_array[i]}`);
+    
+}
+}
+console.log(copy_array);
+
 // Merge two arrays.
 let array1 = [12,22,33,44,55,66];
 let array2 = [11,21,31,41,51,61];
@@ -203,4 +218,98 @@ moving[i-1] = moving[i];//shifting
 }
 moving[moving.length-1] = index; //place
 console.log(moving);//log output
+// Question 1: Find Second Largest Number
+let Elements = [100,345,3200,12000,200,250,9000];
+let Large = Elements[0]; 
+let s_large = Large;
+let third_large = s_large;
+for(let i=0; i<Elements.length; i++){
+  if(Elements[i]>Large){
+    s_large = Large;// because this line is important and we are miss in my overall code.
+    third_large = s_large;
+    Large=  Elements[i];
+   
 
+}
+else if(Elements[i]>s_large){
+    s_large  = Elements[i];
+    
+}
+else if(Elements[i]>third_large){
+    third_large = Elements[i];
+}
+}
+
+console.log(`${third_large}: third_large`);
+console.log(`${s_large}: s_large`);
+console.log(`${Large}: Large`);
+//for even
+let n = Number(prompt("enter your number"));
+for(let i=0; i<n; i++){
+    if(i%2==0){
+        console.log(`${i}:this is even`);
+        
+    }
+    else{
+        console.log(`${i}:this is not even..`);
+        
+    }
+}
+console.log(n);
+
+//for odd 
+
+let n1 = Number(prompt("enter your number"));
+for(let i=0; i<n1; i++){
+    if(i%2==1){
+        console.log(`${i}:this is odd`);
+        
+    }
+    else{
+        console.log(`${i}:this is not odd.`);
+        
+    }
+}
+console.log(n1);
+//duplicates
+// let dup = [1,2,3,3,4,5,2,1];
+// let real = [];
+// for(let i =0; i<dup.length; i++){
+//     if(dup[i] !== dup[i+1]){
+//         real = dup;
+
+        
+//     }
+//     else{
+//         console.log("this is dup");
+        
+//     }
+// }
+// console.log(`${dup}:${real}`);
+let real = [12,12,34,22,14,14,22,34,13,67];
+let copies = [];
+for(let i=0; i<real.length; i++){
+    if(!copies.includes(real[i])){
+        copies.push(real[i]);
+
+    }
+    else{
+      console.log(`${real[i]}`);
+    }
+}
+console.log(copies);
+
+
+//Task 4: Frequency Count (VERY IMPORTANT)
+let fre= [1,2,2,3,4,2,1,4,8.8,77,78,787];
+let counts= "0";
+
+for(let i=0; i<fre.length; i++){
+     for(let j=fre.length; j>0; j--){
+        if(fre[i]== counts[j]){
+            counts  = fre[i];
+            counts++;
+        }
+     }
+}
+console.log(counts);
